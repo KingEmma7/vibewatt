@@ -47,6 +47,7 @@ def test_isolate_redirects_every_provider_path(tmp_path, monkeypatch):
         Path, "home", classmethod(lambda cls: Path(os.path.expanduser("~")))
     )
 
+    monkeypatch.chdir(tmp_path)
     sandbox = tmp_path / "sandbox"
     _fixture_server().isolate(sandbox, monkeypatch.setenv)
 

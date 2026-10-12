@@ -42,11 +42,9 @@ the frontend with `cd web && npm run dev` next to it.
 ## Try the dashboard with synthetic data
 
 No agent account, subscription, credentials or personal logs are needed for this
-route. Use a clean checkout and a shell without personal `VIBEWATT_CONFIG`,
-`CCBURN_CONFIG`, `CODEX_HOME`, `VIBEWATT_VSCODE_USER_DIRS`,
-`VIBEWATT_COPILOT_CACHE` or `ANTIGRAVITY_DATA_DIR` overrides: the current demo
-isolation helper does not clear those inherited variables. After the setup above,
-run these commands from the repository root:
+route. The demo redirects inherited configuration and provider paths into its
+temporary directory and runs there to avoid loading project-local configuration.
+After the setup above, run these commands from the repository root:
 
 ```bash
 cd web
