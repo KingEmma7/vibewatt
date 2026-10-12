@@ -28,6 +28,31 @@ uvx vibewatt doctor       # what it can and cannot see on this machine
 To keep it: `uv tool install vibewatt` (or `pipx install vibewatt`). The first run
 reads your logs into a local SQLite store. Later runs only read what changed.
 
+## Run the dashboard without opening a browser
+
+For a terminal or remote session, start the normal dashboard without automatic
+browser launch:
+
+```bash
+uvx vibewatt serve --no-browser
+# Open http://127.0.0.1:8777/ yourself.
+```
+
+To use another local port, pass `--port` and open the matching loopback URL:
+
+```bash
+uvx vibewatt serve --no-browser --port 8780
+# Open http://127.0.0.1:8780/ yourself.
+```
+
+Keep the command running while you use the dashboard; press **Ctrl+C** in that
+terminal to stop it. These commands serve your local usage store. For a safe
+synthetic contributor walkthrough, use the separate
+[`demo_server.py` instructions](https://github.com/MMALI3287/vibewatt/blob/master/CONTRIBUTING.md#try-the-dashboard-with-synthetic-data)
+instead. Leave the host at its loopback default; do not bind the dashboard
+publicly as a workaround. The [privacy and security notes](#privacy) explain
+the Host and cross-site request protections.
+
 ## Why vibewatt
 
 There are bigger tools in this space. vibewatt is narrower on purpose.
